@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./includes/css/bootstrap.min.css" type="text/css">
+
+    </head>
+<body>
+    <div class="container">
+    <form name="predictionform" action="/predictions" method="POST">
+<input type="text" name="pregnanciesno" placeholder="Number of Pregnancies">
+<input type="text" name="glucose" placeholder="Glucose Level">
+<input type="text" name="bloodpressure" placeholder="Blood Pressure">
+<input type="text" name="SkinThickness" placeholder="Skin Thickness">
+<input type="text" name="insulin" placeholder="Insulin">
+<input type="text" name="bmi" placeholder="BMI">
+<input type="text" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function">
+<input type="text" name="Age" placeholder="Age">
+<button type="submit" >PREDICT</button>
+
+</form>
+<!-- <input type="text" name="outcome" placeholder="Result/Outcome" value={{pred}}> -->
+<br><h4 align="center"<b>{{pred}}</b></h4>
+</div>
+</body>
+ 
+
+</html>
