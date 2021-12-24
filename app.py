@@ -24,10 +24,10 @@ def predict():
         prediction=model.predict(finalfeatures)
         if prediction==1:
 
-          return render_template("diabetespred.html",pred="Higher chances of diabetes")
+          return render_template("diabetespred.html",pred=prediction)
         if prediction==0:
 
-          return render_template("diabetespred.html",pred="Minimal chances of diabetes")
+          return render_template("diabetespred.html",pred=prediction)
 
 
 if __name__ == "__main__":

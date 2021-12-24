@@ -1,26 +1,40 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="./includes/css/bootstrap.min.css" type="text/css">
+{% extends 'header.html' %}
 
-    </head>
-<body>
+{% block content %}
+
+   
+
     <div class="container">
+        
     <form name="predictionform" action="/predictions" method="POST">
-<input type="text" name="pregnanciesno" placeholder="Number of Pregnancies">
-<input type="text" name="glucose" placeholder="Glucose Level">
-<input type="text" name="bloodpressure" placeholder="Blood Pressure">
-<input type="text" name="SkinThickness" placeholder="Skin Thickness">
-<input type="text" name="insulin" placeholder="Insulin">
-<input type="text" name="bmi" placeholder="BMI">
-<input type="text" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function">
-<input type="text" name="Age" placeholder="Age">
-<button type="submit" >PREDICT</button>
-
+       
+        
+        <div class="form-group-row py-2"></div>
+        <div class="col-sm-6 m-auto ">
+          <u><b> <p align="center">DIABETES PREDICTION</p></b></u> 
+            <P align="center">Please fill in the following inputs to identify your current state</P>
+<input type="text" name="pregnanciesno" class="form-control" placeholder="Number of Pregnancies">
+<input type="text" name="glucose" class="form-control" placeholder="Glucose Level">
+<input type="text" name="bloodpressure" class="form-control" placeholder="Blood Pressure">
+<input type="text" name="SkinThickness" class="form-control" placeholder="Skin Thickness">
+<input type="text" name="insulin" class="form-control" placeholder="Insulin">
+<input type="text" name="bmi" class="form-control" placeholder="BMI">
+<input type="text" name="DiabetesPedigreeFunction" class="form-control" placeholder="Diabetes Pedigree Function">
+<input type="text" name="Age" class="form-control" placeholder="Age">
+<br>
+<button class="btn btn-primary"  type="submit"  >PREDICT</button>
+</div>
 </form>
-<!-- <input type="text" name="outcome" placeholder="Result/Outcome" value={{pred}}> -->
-<br><h4 align="center"<b>{{pred}}</b></h4>
+
+{% if pred == 1 %}
+<br><h4 align='center' class= 'alert alert-danger'><b>Higher chances of Diabetes</b></h4>
+{% endif %}
+{% if pred == 0 %}
+<br><h4 align='center' class= 'alert alert-primary'><b>Minimal Chances of Diabetes</b></h4>
+{% endif %}
+</div>
 </div>
 </body>
- 
+{% endblock %}  
 
 </html>
