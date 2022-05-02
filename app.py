@@ -29,6 +29,5 @@ def predict():
 
           return render_template("diabetespred.html",pred=prediction)
 
-
 if __name__ == "__main__":
     app.run(debug=True)
